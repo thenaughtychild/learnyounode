@@ -1,7 +1,7 @@
-var exercise      = require('workshopper-exercise')()
-  , filecheck     = require('workshopper-exercise/filecheck')
-  , execute       = require('workshopper-exercise/execute')
-  , comparestdout = require('workshopper-exercise/comparestdout')
+var exercise = require('workshopper-exercise')(),
+  filecheck = require('workshopper-exercise/filecheck'),
+  execute = require('workshopper-exercise/execute'),
+  comparestdout = require('workshopper-exercise/comparestdout')
 
 
 // checks that the submission file actually exists
@@ -16,16 +16,16 @@ exercise = comparestdout(exercise)
 
 // generate a random positive integer <= 100
 
-function rndint () {
+function rndint() {
   return Math.ceil(Math.random() * 100)
 }
 
 
-exercise.addSetup(function (mode, callback) {
+exercise.addSetup(function(mode, callback) {
   // mode == 'run' || 'verify'
 
   // create a random batch of cmdline args
-  var args = [ rndint(), rndint() ]
+  var args = [rndint(), rndint()]
 
   while (Math.random() > 0.3)
     args.push(rndint())
